@@ -35,7 +35,7 @@ jobs:
       - name: Commit the Snake Animation
         run: |
           git config --global user.name 'FerhatAkkopru'
-          git config --global user.email 'youremail@example.com'
+          git config --global user.email 'akkopru_ferhat65@outlook.com'
           git add dist/github-contribution-grid-snake.svg
           git commit -m 'Update snake animation'
           git push

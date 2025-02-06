@@ -18,19 +18,19 @@ jobs:
         id: snake-gif
         with:
           github_user_name: FerhatAkkopru
-          svg_out_path: dist/github-contribution-grid-snake.svg
+          svg_out_path: github-contribution-grid-snake.svg  # Dosyanın yolu
 
       - name: Create dist directory
         run: mkdir -p dist  # dist klasörünü oluşturuyoruz
 
       - name: Move the Snake Animation to dist folder
-        run: mv github-contribution-grid-snake.svg dist/
+        run: mv github-contribution-grid-snake.svg dist/  # Animasyonu dist/ klasörüne taşıyoruz
 
       - name: Upload the Snake Animation as Artifact
         uses: actions/upload-artifact@v4
         with:
           name: snake-gif
-          path: dist/github-contribution-grid-snake.svg
+          path: dist/github-contribution-grid-snake.svg  # Yılan animasyonunu yükleme
 
       - name: Commit the Snake Animation
         run: |

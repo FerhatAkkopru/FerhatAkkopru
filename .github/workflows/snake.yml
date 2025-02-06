@@ -3,18 +3,39 @@ name: Generate Snake
 on:
   schedule:
     - cron: "0 0 * * *"  # Her gün gece 12'de çalıştır
-  workflow_dispatch:
+  workflow_dispatch:  # Manuel olarak çalıştırılabilir
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: Platane/snk@master
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Generate the Snake Animation
+        uses: Platane/snk@master
         id: snake-gif
         with:
           github_user_name: FerhatAkkopru
           svg_out_path: dist/github-contribution-grid-snake.svg
-      - uses: actions/upload-artifact@v4  # V4 sürümünü kullanıyoruz
+
+      - name: Create dist directory
+        run: mkdir -p dist  # dist klasörünü oluşturuyoruz
+
+      - name: Move the Snake Animation to dist folder
+        run: mv github-contribution-grid-snake.svg dist/
+
+      - name: Upload the Snake Animation as Artifact
+        uses: actions/upload-artifact@v4
         with:
           name: snake-gif
           path: dist/github-contribution-grid-snake.svg
+
+      - name: Commit the Snake Animation
+        run: |
+          git config --global user.name 'FerhatAkkopru'
+          git config --global user.email 'youremail@example.com'
+          git add dist/github-contribution-grid-snake.svg
+          git commit -m 'Update snake animation'
+          git push

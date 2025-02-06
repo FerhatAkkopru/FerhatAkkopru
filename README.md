@@ -1,4 +1,4 @@
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=FerhatAkkopru&show_icons=true&theme=dracula)
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=FerhatAkkopru&show_icons=true&theme=dark)
 
 
 <!--

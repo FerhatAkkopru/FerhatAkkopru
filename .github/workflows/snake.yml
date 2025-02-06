@@ -1,41 +1,98 @@
-name: Generate Snake
+name: GitHub Snake Game
+
+
 
 on:
+
+  # Schedule the workflow to run daily at midnight UTC
+
   schedule:
-    - cron: "0 0 * * *"  # Her gün gece 12'de çalıştır
-  workflow_dispatch:  # Manuel olarak çalıştırılabilir
+
+    - cron: "0 0 * * *"
+
+
+
+  # Allow manual triggering of the workflow
+
+  workflow_dispatch:
+
+
+
+  # Trigger the workflow on pushes to the main branch
+
+  push:
+
+    branches:
+
+      - main
+
+
 
 jobs:
-  build:
+
+  generate:
+
     runs-on: ubuntu-latest
 
+    timeout-minutes: 10
+
+
+
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v2
 
-      - name: Generate the Snake Animation
-        uses: Platane/snk@master
-        id: snake-gif
+      # Step 1: Checkout the repository
+
+      - name: Checkout Repository
+
+        uses: actions/checkout@v3
+
+
+
+      # Step 2: Generate the snake animations
+
+      - name: Generate GitHub Contributions Snake Animations
+
+        uses: Platane/snk@v4
+
         with:
-          github_user_name: FerhatAkkopru
-          svg_out_path: github-contribution-grid-snake.svg  # Dosyanın yolu
 
-      - name: Create dist directory
-        run: mkdir -p dist  # dist klasörünü oluşturuyoruz
+          # GitHub username to generate the animation for
 
-      - name: Move the Snake Animation to dist folder
-        run: mv github-contribution-grid-snake.svg dist/  # Animasyonu dist/ klasörüne taşıyoruz
+          github_user_name: ${{ github.repository_owner }}
 
-      - name: Upload the Snake Animation as Artifact
-        uses: actions/upload-artifact@v4
+
+
+          # Define the output files and their configurations
+
+          outputs: |
+
+            dist/github-snake.svg
+
+            dist/github-snake-dark.svg?palette=github-dark
+
+            dist/ocean.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
+
+        env:
+
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+
+
+      # Step 3: Deploy the generated files to the 'output' branch
+
+      - name: Deploy to Output Branch
+
+        uses: peaceiris/actions-gh-pages@v3
+
         with:
-          name: snake-gif
-          path: dist/github-contribution-grid-snake.svg  # Yılan animasyonunu yükleme
 
-      - name: Commit the Snake Animation
-        run: |
-          git config --global user.name 'FerhatAkkopru'
-          git config --global user.email 'akkopru_ferhat65@outlook.com'
-          git add dist/github-contribution-grid-snake.svg
-          git commit -m 'Update snake animation'
-          git push
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+          publish_dir: ./dist
+
+          publish_branch: output
+
+          # Optionally, you can set a custom commit message
+
+          commit_message: "Update snake animation [skip ci]"
+

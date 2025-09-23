@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://raw.githubusercontent.com/FerhatAkkopru/FerhatAkkopru/main/sw.mp4" width="600"/>
+<img src="https://raw.githubusercontent.com/FerhatAkkopru/FerhatAkkopru/main/sw.gif" width="600"/>
 </p>
 
 ### Connect with me:

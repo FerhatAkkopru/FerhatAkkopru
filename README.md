@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://raw.githubusercontent.com/FerhatAkkopru/FerhatAkkopru/main/Samurai%20Jack%20Stars%20GIF%20by%20Adult%20Swim.gif" width="600"/>
+<img src="https://raw.githubusercontent.com/FerhatAkkopru/FerhatAkkopru/main/WhatsApp GIF 2025-09-23 at 18.04.38.gif" width="600"/>
 </p>
 
 ### Connect with me:

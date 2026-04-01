@@ -1,4 +1,4 @@
-<h1 align="center">Hi there, I'm Ferhat! 👋</h1>
+<h1 align="center">Hi there, I'm Outis! 👋</h1>
 
 <p align="center">
   <strong>Computer Engineering Student at Gebze Technical University (GTU)</strong><br>
@@ -30,24 +30,6 @@
 
 ---
 
-### 🏆 GitHub Stats & Achievements
-
-<div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=FerhatAkkopru&theme=radical&column=4&margin-w=15&v=cache_fix" alt="GitHub Trophies" />
-  
-  <br/><br/>
-  
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=FerhatAkkopru&layout=compact&theme=radical&hide=html,css&v=cache_fix" alt="Top Languages"/>
-  
-  <br/><br/>
-  
-  <img src="https://img.shields.io/badge/LeetCode-Solved-FFA116?style=flat-square&logo=leetcode&logoColor=black" alt="LeetCode"/>
-  <img src="https://img.shields.io/badge/HackerRank-Certified-2EC866?style=flat-square&logo=hackerrank&logoColor=white" alt="HackerRank"/>
-</div>
-
-<br/>
-
----
 
 ### 🤝 Connect with me:
 
